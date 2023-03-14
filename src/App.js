@@ -8,7 +8,7 @@ class App extends React.Component{
         this.state = {
             orders: [],
             items: [
-                {id: 1, title: "Стул серый", img: "grey_chair.jpg", desc: "Серый стул", category: "chairs", price: "49.00"},
+                {id: 1, title: "Серый стул", img: "grey_chair.jpg", desc: "Стул серый", category: "chairs", price: "49.00"},
              {id: 2, title: "Стол", img: "table.jpg", desc: "Стол белый", category: "tables", price: "149.00"},
               {id: 3, title: "Шкаф", img: "wardrobe.jpg", desc: "Шкаф тёмный", category: "wardrobes", price: "199.00"},
                {id: 4, title: "Плита", img: "stove.jpg", desc: "Плита кухонная", category: "stoves", price: "120.00"},

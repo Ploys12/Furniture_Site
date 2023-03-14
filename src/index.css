@@ -123,6 +123,22 @@ header .shop-cart .item p {
     color: #797979;
     font-weight: 600;
 }
+
+header .shop-cart .item .delete-icon {
+    color: #ca5252;
+    float: right;
+    position: relative;
+    top: -25px;
+    cursor: pointer;
+    transition: color, transform 500ms ease;
+}
+
+header .shop-cart .item .delete-icon:hover{
+    color: #e61212;
+    transform: scale(1.5);
+    
+}
+
 footer{
     text-align: center;
     margin-top: 100px;
