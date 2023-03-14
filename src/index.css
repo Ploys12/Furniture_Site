@@ -139,6 +139,15 @@ header .shop-cart .item .delete-icon:hover{
     
 }
 
+header .shop-cart .summa {
+    float: left;
+    width: 100%;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+
+}
+
 footer{
     text-align: center;
     margin-top: 100px;
