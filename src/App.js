@@ -2,11 +2,13 @@ import React from 'react'
 import Header from './Copmonents/Header'
 import Footer from './Copmonents/Footer'
 import Items from './Copmonents/Items'
+import Categories from './Copmonents/Categories'
 class App extends React.Component{
     constructor(props){
         super(props)
         this.state = {
             orders: [],
+            currentItems: [],
             items: [
                 {id: 1, title: "Серый стул", img: "grey_chair.jpg", desc: "Стул серый", category: "chairs", price: "49.00"},
              {id: 2, title: "Стол", img: "table.jpg", desc: "Стол белый", category: "tables", price: "149.00"},
@@ -16,15 +18,19 @@ class App extends React.Component{
             ]
         }
 
+        this.state.currentItems = this.state.items
+
         this.addToOrder = this.addToOrder.bind(this)
         this.deleteOrder = this.deleteOrder.bind(this)
+        this.chooseCategory = this.chooseCategory.bind(this)
     }
 
 
     render(){
     return (<div className='wrapper'>
         <Header orders={this.state.orders} onDelete={this.deleteOrder}/>
-        <Items items={this.state.items} onAdd={this.addToOrder}/>
+        <Categories chooseCategory={this.chooseCategory}/>
+        <Items items={this.state.currentItems} onAdd={this.addToOrder}/>
          <Footer />
          </div>)}
 
@@ -32,6 +38,23 @@ class App extends React.Component{
     deleteOrder(id){
         this.setState({orders: this.state.orders.filter(el => el.id !== id)})
 
+
+    }
+
+    chooseCategory(category){
+
+        
+
+        if(category === 'all'){
+            this.setState({
+                currentItems: this.state.items
+            })
+            return
+        }
+
+        this.setState({
+            currentItems: this.state.items.filter(el => el.category === category)
+        })
 
     }
 
