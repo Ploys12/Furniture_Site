@@ -10,7 +10,12 @@ export class Categories extends Component {
             {key: 'tables', name: "Столы"},
             {key: 'wardrobes', name: "Шкафы"},
             {key: 'fridges', name: "Холодильники"},
-            {key: 'stoves', name: "Плиты"}]
+            {key: 'stoves', name: "Плиты"},
+            {key: 'lights', name: "Лампы"},
+            {key: 'bads', name: "Кровати"},
+            {key: 'shoes', name: "Обувные полки"},
+            {key: 'sofas', name: "Диваны"}]
+            
         }
     }
 
