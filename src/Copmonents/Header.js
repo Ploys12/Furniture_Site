@@ -13,6 +13,7 @@ function showNothing(){
   return (<div className='empty'><h2>Товаров нет</h2></div>)
 }
 
+
 export default function Header(props) {
   let [cartOpen, setCartOpen] = useState(false)
 
