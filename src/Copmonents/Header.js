@@ -32,7 +32,7 @@ export default function Header(props) {
                 <li>Контакты</li>
                 <li>Кабинет</li>
             </ul>
-            <FaShoppingBasket onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`shop-cart-button ${cartOpen && 'active'}`}/>
+            <FaShoppingBasket title="Корзина" onClick={() => setCartOpen(cartOpen = !cartOpen)} className={`shop-cart-button ${cartOpen && 'active'}`}/>
             {cartOpen && (
               <div className='shop-cart'>
                 {props.orders.length > 0 ? showOrders(props) : showNothing()}
