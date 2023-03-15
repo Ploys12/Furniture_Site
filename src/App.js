@@ -3,6 +3,7 @@ import Header from './Copmonents/Header'
 import Footer from './Copmonents/Footer'
 import Items from './Copmonents/Items'
 import Categories from './Copmonents/Categories'
+import Fuller from './Copmonents/Fuller'
 class App extends React.Component{
     constructor(props){
         super(props)
@@ -32,7 +33,9 @@ class App extends React.Component{
                 {id: 20, title: "Кровать", img: "third_bad.jpg", desc: "Кровать шикарная", category: "bads", price: "349.00"},
                 {id: 21, title: "Диван", img: "sofa.jpg", desc: "Диван обычный", category: "sofas", price: "189.00"}
                 
-            ]
+            ],
+            showFullItem: false,
+            fullItem: {}
         }
 
         this.state.currentItems = this.state.items
@@ -40,6 +43,7 @@ class App extends React.Component{
         this.addToOrder = this.addToOrder.bind(this)
         this.deleteOrder = this.deleteOrder.bind(this)
         this.chooseCategory = this.chooseCategory.bind(this)
+        this.onShowItem = this.onShowItem.bind(this)
     }
 
 
@@ -47,11 +51,16 @@ class App extends React.Component{
     return (<div className='wrapper'>
         <Header orders={this.state.orders} onDelete={this.deleteOrder}/>
         <Categories chooseCategory={this.chooseCategory}/>
-        <Items items={this.state.currentItems} onAdd={this.addToOrder}/>
+        <Items onShowItem={this.onShowItem} items={this.state.currentItems} onAdd={this.addToOrder}/>
+        
+        {this.state.showFullItem && <Fuller item={this.state.fullItem} onAdd={this.addToOrder} onShowItem={this.onShowItem}/>}
          <Footer />
          </div>)}
 
-
+    onShowItem(item){
+        this.setState({fullItem: item})
+        this.setState({ showFullItem: !this.state.showFullItem })
+    }
     deleteOrder(id){
         this.setState({orders: this.state.orders.filter(el => el.id !== id)})
 
