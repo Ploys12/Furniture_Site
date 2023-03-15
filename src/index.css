@@ -250,7 +250,7 @@ main .add-to-cart, .full-item .add-to-cart {
     transition: transform 0.5s ease;
 }
 
-main .add-tocart:hover, .full-item .add-to-cart:hover{
+.add-to-cart:hover{
     transform: scale(1.5) translateY(-5px);
 
 }
