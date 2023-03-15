@@ -2,7 +2,7 @@ import React from 'react'
 
 class Fuller extends React.Component{
     render(){
-        return (<div className='full-item'>
+        return (<div className='full-item' onClick={() => this.props.onShowItem(this.props.item)}>
             <div>
             <img src={"./img/" + this.props.item.img} alt={this.props.item.title}
          title={this.props.item.title} onClick={() => this.props.onShowItem(this.props.item)}/>
